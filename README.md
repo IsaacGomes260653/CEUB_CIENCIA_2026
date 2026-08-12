@@ -64,3 +64,45 @@ Depois acesse `http://localhost:8080`.
 ## Licença
 
 Uso pessoal / educacional.
+
+---
+
+# PlayHub — Mini-Games Portal (English)
+
+A free mini-games portal that runs straight in the browser. Pure HTML, CSS, and JavaScript — no frameworks, no build step, no install. Also works as a PWA (installable, with offline support via Service Worker).
+
+## Games
+
+| Game | Description |
+|---|---|
+| 🎮 Tic-Tac-Toe | Classic 2-player, same device |
+| 🐍 Snake | Eat the apples, grow, don't hit the wall or yourself |
+| 🔢 2048 | Merge the numbers and try to reach the 2048 tile |
+| 🃏 Memory | Flip the cards and find all the pairs |
+| 🧩 15 Puzzle | Rearrange the tiles until they're in order |
+| 💣 Minesweeper | Clear the board without hitting a mine, three difficulty levels |
+| ⚽ Fantasy World Cup | Build your Dream Team from real players across historic World Cups, by field position (tactical formations: 4-4-2, 4-3-3, 3-5-2, 5-3-2, 4-2-3-1), and play a simulated tournament |
+
+## Running locally
+
+Since it's a fully static site, just serve the folder with any simple HTTP server (needed for the Service Worker/PWA to work correctly — opening the files directly via `file://` also works for playing, just without PWA support):
+
+```bash
+# Python
+python -m http.server 8080
+
+# or Node
+npx serve .
+```
+
+Then open `http://localhost:8080`.
+
+## Tech stack
+
+- HTML5, CSS3, JavaScript (vanilla, no external dependencies)
+- PWA (manifest + service worker) for install and offline use
+- Visual theme switcher (Retro/Neon) via `assets/theme.js`
+
+## License
+
+Personal / educational use.
