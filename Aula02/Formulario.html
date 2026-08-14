@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+
+    <form action="processar.php" method="post">
+
+        <h2>Dados pessoais</h2>
+        <table border="2">
+            <tbody>
+                <tr>
+                    <td><label for="nome">Nome:</label></td>
+                    <td><input type="text" id="nome" name="nome" required></td>
+                </tr>
+                <tr>
+                    <td><label for="nascimento">Nascimento:</label></td>
+                    <td><input type="date" id="nascimento" name="nascimento" required></td>
+                </tr>
+                <tr>
+                    <td><label for="nome_mae">Nome da Mãe:</label></td>
+                    <td><input type="text" id="nome_mae" name="nome_mae" required></td>
+                </tr>
+                <tr>
+                    <td><label for="nome_pai">Nome do Pai:</label></td>
+                    <td><input type="text" id="nome_pai" name="nome_pai" required></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email:</label></td>
+                    <td><input type="email" id="email" name="email" required></td>
+                </tr>
+                <tr>
+                    <td><label for="idade">Idade:</label></td>
+                    <td><input type="number" id="idade" name="idade" required></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Informações de matrícula</h2>
+        <table border="2">
+            <tbody>
+                <tr>
+                    <td><label for="curso">Curso:</label></td>
+                    <td>
+                        <select id="curso" name="curso" required>
+                            <option value="">Selecione um curso</option>
+                            <option value="informatica">Informática</option>
+                            <option value="administracao">Administração</option>
+                            <option value="enfermagem">Enfermagem</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="turno-manha">Turno:</label></td>
+                    <td>
+                        <input type="radio" id="turno-manha" name="turno" value="manha">
+                        <label for="turno-manha">Manhã</label><br>
+                        <input type="radio" id="turno-tarde" name="turno" value="tarde">
+                        <label for="turno-tarde">Tarde</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Atividades Extracurriculares:</td>
+                    <td>
+                        <input type="checkbox" id="ativ-informatica" name="atividades" value="informatica">
+                        <label for="ativ-informatica">Informática</label><br>
+                        <input type="checkbox" id="ativ-musica" name="atividades" value="musica">
+                        <label for="ativ-musica">Música</label><br>
+                        <input type="checkbox" id="ativ-balet" name="atividades" value="balet">
+                        <label for="ativ-balet">Balet</label><br>
+                        <input type="checkbox" id="ativ-pintura" name="atividades" value="pintura">
+                        <label for="ativ-pintura">Pintura</label><br>
+                        <input type="checkbox" id="ativ-judo" name="atividades" value="judo">
+                        <label for="ativ-judo">Judô</label><br>
+                        <input type="checkbox" id="ativ-futebol" name="atividades" value="futebol">
+                        <label for="ativ-futebol">Futebol</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpar">
+
+    </form>
+
+</body>
+</html>
