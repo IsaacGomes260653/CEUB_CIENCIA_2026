@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escola Virtual</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            background-color: #f3f5f8;
+            padding: 40px 20px;
+        }
+
+        form{
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 1.5px solid #1b2333;
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        /* ===== Cada seção (Dados Pessoais / Informações de Matrícula) ===== */
+        .secao{
+            position: relative;
+            border: 1.5px solid #1b2333;
+            border-radius: 16px;
+            padding: 40px 30px 30px;
+            margin-bottom: 30px;
+        }
+
+        .secao:last-child{
+            margin-bottom: 0;
+        }
+
+        /* A "pill" escura sobreposta na borda de cima da caixa */
+        .secao-titulo{
+            position: absolute;
+            top: -18px;
+            left: 30px;
+            background-color: #111c30;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            padding: 8px 20px;
+            border-radius: 20px;
+        }
+
+        /* ===== Grade de 2 colunas: Dados Pessoais ===== */
+        .grid-2{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px 40px;
+        }
+
+        .campo{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .campo label{
+            font-weight: bold;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: #111c30;
+            margin-bottom: 8px;
+        }
+
+        .campo input,
+        .campo select{
+            border: 1px solid #c7cdd6;
+            border-radius: 8px;
+            padding: 10px 12px;
+            font-size: 15px;
+            font-family: inherit;
+            color: #333;
+        }
+
+        .campo input::placeholder{
+            color: #a9b0bb;
+        }
+
+        .campo input:focus,
+        .campo select:focus{
+            outline: none;
+            border-color: #1b2333;
+            box-shadow: 0 0 0 3px rgba(27, 35, 51, 0.12);
+        }
+
+        /* ===== Grade de 3 colunas: Informações de Matrícula ===== */
+        .grid-3{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1.4fr;
+            gap: 28px 40px;
+        }
+
+        .opcoes label{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: normal;
+            text-transform: none;
+            font-size: 15px;
+            color: #333;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .opcoes input[type="radio"],
+        .opcoes input[type="checkbox"]{
+            width: 16px;
+            height: 16px;
+            accent-color: #111c30;
+        }
+
+        /* ===== Botões ===== */
+        .botoes{
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        input[type="submit"],
+        input[type="reset"]{
+            padding: 11px 28px;
+            font-size: 14px;
+            font-family: inherit;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 0 6px;
+            font-weight: bold;
+        }
+
+        input[type="submit"]{
+            background-color: #2c8a4f;
+            color: white;
+        }
+
+        input[type="reset"]{
+            background-color: #b0392f;
+            color: white;
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover{
+            opacity: 0.85;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="processar.php" method="post">
+
+        <!-- ========== SEÇÃO 1: DADOS PESSOAIS ========== -->
+        <div class="secao">
+            <span class="secao-titulo">Dados Pessoais</span>
+
+            <div class="grid-2">
+                <div class="campo">
+                    <label for="nome">Nome do Aluno</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="campo">
+                    <label for="email">E-Mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="campo">
+                    <label for="nome_mae">Nome da Mãe</label>
+                    <input type="text" id="nome_mae" name="nome_mae" required>
+                </div>
+                <div class="campo">
+                    <label for="nome_pai">Nome do Pai</label>
+                    <input type="text" id="nome_pai" name="nome_pai">
+                </div>
+
+                <div class="campo">
+                    <label for="nascimento">Nascimento</label>
+                    <input type="date" id="nascimento" name="nascimento" required>
+                </div>
+                <div class="campo">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(61) 9 9999-9999" required>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== SEÇÃO 2: INFORMAÇÕES DE MATRÍCULA ========== -->
+        <div class="secao">
+            <span class="secao-titulo">Informações de Matrícula</span>
+
+            <div class="grid-3">
+                <div class="campo">
+                    <label for="serie">Série</label>
+                    <select id="serie" name="serie" required>
+                        <option value="pre-escolar" selected>Pré-escolar</option>
+                        <option value="1ano">1º ano</option>
+                        <option value="2ano">2º ano</option>
+                        <option value="3ano">3º ano</option>
+                        <option value="4ano">4º ano</option>
+                        <option value="5ano">5º ano</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label>Turno</label>
+                    <div class="opcoes">
+                        <label><input type="radio" name="turno" value="manha" required> Manhã</label>
+                        <label><input type="radio" name="turno" value="tarde" required> Tarde</label>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label>Atividades Extracurriculares</label>
+                    <div class="opcoes">
+                        <label><input type="checkbox" name="atividades" value="informatica"> Informática</label>
+                        <label><input type="checkbox" name="atividades" value="musica"> Música</label>
+                        <label><input type="checkbox" name="atividades" value="balet"> Balet</label>
+                        <label><input type="checkbox" name="atividades" value="pintura"> Pintura</label>
+                        <label><input type="checkbox" name="atividades" value="judo"> Judô</label>
+                        <label><input type="checkbox" name="atividades" value="futebol"> Futebol</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="botoes">
+            <input type="submit" value="Envia Formulário">
+            <input type="reset" value="Limpa Campos">
+        </div>
+
+    </form>
+
+</body>
+</html>
