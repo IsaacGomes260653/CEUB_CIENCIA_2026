@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!-- lang="pt-BR" informa ao navegador e aos leitores de tela o idioma da página -->
+<html lang="pt-BR">
+<head>
+    <!-- charset UTF-8: permite acentos e ç sem quebrar (á, ã, ê, ç) -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- viewport: faz a página se adaptar à largura da tela (responsividade) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escola Virtual</title>
+
+    <!-- Liga o arquivo de estilos. Precisa estar na MESMA pasta deste HTML -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!--
+        action = para onde os dados vão quando o formulário é enviado
+        method = "post" envia os dados escondidos no corpo da requisição
+                 ("get" colocaria tudo visível na URL)
+    -->
+    <form action="processar.php" method="post">
+
+        <!-- ========== SEÇÃO 1: DADOS PESSOAIS ========== -->
+        <div class="secao">
+            <span class="secao-titulo">Dados Pessoais</span>
+
+            <!-- grid-2 = duas colunas de largura igual -->
+            <div class="grid-2">
+
+                <!--
+                    O atributo "for" do label aponta para o "id" do input.
+                    Isso faz o clique no texto focar o campo, e é o que
+                    permite ao leitor de tela anunciar o rótulo correto.
+                -->
+                <div class="campo">
+                    <label for="nome">Nome do Aluno</label>
+                    <!-- required = o navegador bloqueia o envio se estiver vazio -->
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="campo">
+                    <label for="email">E-Mail</label>
+                    <!-- type="email" valida o formato automaticamente -->
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="campo">
+                    <label for="nome_mae">Nome da Mãe</label>
+                    <input type="text" id="nome_mae" name="nome_mae" required>
+                </div>
+                <div class="campo">
+                    <label for="nome_pai">Nome do Pai</label>
+                    <!-- Sem "required": nem todo aluno tem o dado do pai -->
+                    <input type="text" id="nome_pai" name="nome_pai">
+                </div>
+
+                <div class="campo">
+                    <label for="nascimento">Nascimento</label>
+                    <!-- type="date" abre o seletor de calendário do navegador -->
+                    <input type="date" id="nascimento" name="nascimento" required>
+                </div>
+                <div class="campo">
+                    <label for="telefone">Telefone</label>
+                    <!-- type="tel" abre o teclado numérico no celular -->
+                    <input type="tel" id="telefone" name="telefone" placeholder="(61) 9 9999-9999" required>
+                </div>
+                <div class="campo">
+                    <label for="cpf">CPF</label>
+                    <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" required>
+                </div>
+                <div class="campo">
+                    <label for="cep">CEP</label>
+                    <input type="text" id="cep" name="cep" placeholder="00000-000" required>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ========== SEÇÃO 2: ENDEREÇO ========== -->
+        <div class="secao">
+            <span class="secao-titulo">Endereço</span>
+
+            <!--
+                grid-endereco tem 6 colunas invisíveis.
+                Cada campo diz quantas colunas ocupa com col-2, col-3, col-4.
+                Como 6 é divisível por 2 e por 3, a mesma grade aceita
+                linhas de 2 campos E linhas de 3 campos.
+            -->
+            <div class="grid-endereco">
+
+                <!-- Linha 1: 4 + 2 = 6 colunas -->
+                <div class="campo col-4">
+                    <label for="logradouro">Logradouro</label>
+                    <input type="text" id="logradouro" name="logradouro" required>
+                </div>
+                <div class="campo col-2">
+                    <label for="numero">Número</label>
+                    <input type="text" id="numero" name="numero" required>
+                </div>
+
+                <!-- Linha 2: 3 + 3 = 6 colunas -->
+                <div class="campo col-3">
+                    <label for="complemento">Complemento</label>
+                    <input type="text" id="complemento" name="complemento">
+                </div>
+                <div class="campo col-3">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" id="bairro" name="bairro" required>
+                </div>
+
+                <!-- Linha 3: 2 + 2 + 2 = 6 colunas -->
+                <div class="campo col-2">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" id="cidade" name="cidade" required>
+                </div>
+                <div class="campo col-2">
+                    <label for="estado">Estado</label>
+                    <input type="text" id="estado" name="estado" required>
+                </div>
+                <div class="campo col-2">
+                    <label for="ibge">Código IBGE</label>
+                    <input type="text" id="ibge" name="ibge" placeholder="0000000">
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ========== SEÇÃO 3: INFORMAÇÕES DE MATRÍCULA ========== -->
+        <div class="secao">
+            <span class="secao-titulo">Informações de Matrícula</span>
+
+            <div class="grid-3">
+
+                <div class="campo">
+                    <label for="serie">Série</label>
+                    <!--
+                        O JavaScript lê o atributo "value", não o texto visível.
+                        Por isso o valor é "5ano" e não "5º ano".
+                    -->
+                    <select id="serie" name="serie" required>
+                        <option value="pre-escolar" selected>Pré-escolar</option>
+                        <option value="1ano">1º ano</option>
+                        <option value="2ano">2º ano</option>
+                        <option value="3ano">3º ano</option>
+                        <option value="4ano">4º ano</option>
+                        <option value="5ano">5º ano</option>
+                    </select>
+
+                    <!--
+                        CAIXA CONDICIONAL
+                        Começa escondida (display:none no CSS).
+                        O script.js adiciona a classe "visivel" quando
+                        o usuário escolhe "5º ano".
+                    -->
+                    <div class="caixa-condicional" id="caixa-quinto-ano">
+                        <label for="obs_quinto">Observações do 5º ano</label>
+                        <input type="text" id="obs_quinto" name="obs_quinto">
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <!--
+                        Sem "for" porque este label descreve o GRUPO inteiro,
+                        não um campo específico.
+                    -->
+                    <label>Turno</label>
+                    <div class="opcoes">
+                        <!--
+                            RADIO: mesmo "name" = mesmo grupo.
+                            Só uma opção pode ficar marcada por vez.
+                        -->
+                        <label><input type="radio" name="turno" value="manha" required> Manhã</label>
+                        <label><input type="radio" name="turno" value="tarde" required> Tarde</label>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label>Atividades Extracurriculares</label>
+                    <div class="opcoes">
+                        <!--
+                            CHECKBOX: pode marcar várias ao mesmo tempo.
+                            Esta é a diferença principal entre radio e checkbox.
+                        -->
+                        <label><input type="checkbox" name="atividades" value="informatica"> Informática</label>
+                        <label><input type="checkbox" name="atividades" value="musica"> Música</label>
+                        <label><input type="checkbox" name="atividades" value="balet"> Balet</label>
+                        <label><input type="checkbox" name="atividades" value="pintura"> Pintura</label>
+                        <label><input type="checkbox" name="atividades" value="judo"> Judô</label>
+                        <label><input type="checkbox" name="atividades" value="futebol"> Futebol</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="botoes">
+            <!-- submit = envia; reset = limpa todos os campos -->
+            <input type="submit" value="Envia Formulário">
+            <input type="reset" value="Limpa Campos">
+        </div>
+
+    </form>
+
+    <!--
+        O script fica no FIM do body de propósito:
+        assim o HTML já existe quando o JavaScript tenta encontrar
+        os elementos com getElementById.
+    -->
+    <script src="script.js"></script>
+</body>
+</html>
