@@ -70,8 +70,13 @@
 
                 <div class="campo col-2">
                     <label for="telefone">Telefone</label>
-                    <!-- type="tel" abre o teclado numérico no celular -->
-                    <input type="tel" id="telefone" name="telefone" placeholder="(61) 9 9999-9999" autocomplete="tel" required>
+                    <!--
+                        type="tel" abre o teclado numérico no celular.
+                        maxlength="16" é o tamanho de "(61) 9 9999-9999" já
+                        formatado — trava o campo mesmo se o script.js falhar
+                        ou o usuário tiver JavaScript desabilitado.
+                    -->
+                    <input type="tel" id="telefone" name="telefone" placeholder="(61) 9 9999-9999" autocomplete="tel" maxlength="16" required>
                 </div>
                 <div class="campo col-2">
                     <label for="cpf">CPF</label>
@@ -81,11 +86,11 @@
                         rejeitaria. inputmode="numeric" só troca o teclado
                         do celular pra numérico, sem mudar essa validação.
                     -->
-                    <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" inputmode="numeric" required>
+                    <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" inputmode="numeric" maxlength="14" required>
                 </div>
                 <div class="campo col-2">
                     <label for="cep">CEP</label>
-                    <input type="text" id="cep" name="cep" placeholder="00000-000" autocomplete="postal-code" inputmode="numeric" required>
+                    <input type="text" id="cep" name="cep" placeholder="00000-000" autocomplete="postal-code" inputmode="numeric" maxlength="9" required>
                 </div>
 
                 <div class="campo col-3">
