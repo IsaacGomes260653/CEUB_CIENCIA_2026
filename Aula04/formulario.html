@@ -75,11 +75,17 @@
                 </div>
                 <div class="campo col-2">
                     <label for="cpf">CPF</label>
-                    <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" required>
+                    <!--
+                        type continua "text" (não "number") porque o valor
+                        tem pontos e traço, que um <input type="number">
+                        rejeitaria. inputmode="numeric" só troca o teclado
+                        do celular pra numérico, sem mudar essa validação.
+                    -->
+                    <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" inputmode="numeric" required>
                 </div>
                 <div class="campo col-2">
                     <label for="cep">CEP</label>
-                    <input type="text" id="cep" name="cep" placeholder="00000-000" autocomplete="postal-code" required>
+                    <input type="text" id="cep" name="cep" placeholder="00000-000" autocomplete="postal-code" inputmode="numeric" required>
                 </div>
 
                 <div class="campo col-3">
@@ -120,7 +126,7 @@
                 </div>
                 <div class="campo col-2">
                     <label for="numero">Número</label>
-                    <input type="text" id="numero" name="numero" required>
+                    <input type="text" id="numero" name="numero" inputmode="numeric" required>
                 </div>
 
                 <!-- Linha 2: 3 + 3 = 6 colunas -->
@@ -144,7 +150,7 @@
                 </div>
                 <div class="campo col-2">
                     <label for="ibge">Código IBGE</label>
-                    <input type="text" id="ibge" name="ibge" placeholder="0000000">
+                    <input type="text" id="ibge" name="ibge" placeholder="0000000" inputmode="numeric">
                 </div>
 
             </div>
