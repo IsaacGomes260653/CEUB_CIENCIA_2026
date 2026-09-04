@@ -40,8 +40,14 @@
                 </div>
                 <div class="campo">
                     <label for="email">E-Mail</label>
-                    <!-- type="email" valida o formato automaticamente -->
-                    <input type="email" id="email" name="email" required>
+                    <!--
+                        type="email" valida o formato automaticamente.
+                        autocomplete="email" é um dos tokens padronizados do
+                        HTML (https://html.spec.whatwg.org/#autofill) — o
+                        navegador usa isso pra saber QUAL dado sugerir no
+                        autopreenchimento, não é só um texto livre qualquer.
+                    -->
+                    <input type="email" id="email" name="email" autocomplete="email" required>
                 </div>
 
                 <div class="campo">
@@ -65,7 +71,7 @@
                 <div class="campo col-2">
                     <label for="telefone">Telefone</label>
                     <!-- type="tel" abre o teclado numérico no celular -->
-                    <input type="tel" id="telefone" name="telefone" placeholder="(61) 9 9999-9999" required>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(61) 9 9999-9999" autocomplete="tel" required>
                 </div>
                 <div class="campo col-2">
                     <label for="cpf">CPF</label>
@@ -73,13 +79,13 @@
                 </div>
                 <div class="campo col-2">
                     <label for="cep">CEP</label>
-                    <input type="text" id="cep" name="cep" placeholder="00000-000" required>
+                    <input type="text" id="cep" name="cep" placeholder="00000-000" autocomplete="postal-code" required>
                 </div>
 
                 <div class="campo col-3">
                     <label for="nascimento">Nascimento</label>
                     <!-- type="date" abre o seletor de calendário do navegador -->
-                    <input type="date" id="nascimento" name="nascimento" required>
+                    <input type="date" id="nascimento" name="nascimento" autocomplete="bday" required>
                 </div>
                 <div class="campo col-3">
                     <label for="idade">IDADE</label>
@@ -110,7 +116,7 @@
                 <!-- Linha 1: 4 + 2 = 6 colunas -->
                 <div class="campo col-4">
                     <label for="logradouro">Logradouro</label>
-                    <input type="text" id="logradouro" name="logradouro" required>
+                    <input type="text" id="logradouro" name="logradouro" autocomplete="address-line1" required>
                 </div>
                 <div class="campo col-2">
                     <label for="numero">Número</label>
@@ -120,7 +126,7 @@
                 <!-- Linha 2: 3 + 3 = 6 colunas -->
                 <div class="campo col-3">
                     <label for="complemento">Complemento</label>
-                    <input type="text" id="complemento" name="complemento">
+                    <input type="text" id="complemento" name="complemento" autocomplete="address-line2">
                 </div>
                 <div class="campo col-3">
                     <label for="bairro">Bairro</label>
@@ -130,11 +136,11 @@
                 <!-- Linha 3: 2 + 2 + 2 = 6 colunas -->
                 <div class="campo col-2">
                     <label for="cidade">Cidade</label>
-                    <input type="text" id="cidade" name="cidade" required>
+                    <input type="text" id="cidade" name="cidade" autocomplete="address-level2" required>
                 </div>
                 <div class="campo col-2">
                     <label for="estado">Estado</label>
-                    <input type="text" id="estado" name="estado" required>
+                    <input type="text" id="estado" name="estado" autocomplete="address-level1" required>
                 </div>
                 <div class="campo col-2">
                     <label for="ibge">Código IBGE</label>
