@@ -8,6 +8,10 @@
 }
 
 body{
+    /* Todo navegador aplica um margin padrão no body (~8px).
+       Zerando aqui, o padding abaixo passa a ser o único espaçamento
+       real, sem soma escondida. */
+    margin: 0;
     /* Lista de fontes: se a primeira não existir, tenta a próxima */
     font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
     background-color: #f3f5f8;
