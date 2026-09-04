@@ -67,6 +67,13 @@ form{
     gap: 28px 40px;   /* 28px entre linhas, 40px entre colunas */
 }
 
+/* Espaço entre a grade de Dados Pessoais (nome/e-mail/pais) e a de
+   telefone/CPF/CEP/nascimento/idade, já que agora são duas grades
+   separadas dentro da mesma seção .secao. */
+.campo-documentos{
+    margin-top: 28px;
+}
+
 /* ===== Grade de 6 colunas: Endereço =====
    6 é divisível por 2 e por 3, então a mesma grade
    aceita linhas de 2 campos e linhas de 3 campos.   */
