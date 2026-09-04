@@ -236,3 +236,23 @@ input[type="submit"]:hover,
 input[type="reset"]:hover{
     opacity: 0.85;
 }
+
+/* ===== Responsividade =====
+   Abaixo de 700px (celular) as grades de 2/3/6 colunas viram 1 coluna,
+   senão os campos ficam espremidos demais pra digitar. */
+@media (max-width: 700px){
+    .grid-2,
+    .grid-endereco,
+    .grid-3{
+        grid-template-columns: 1fr;
+    }
+
+    /* Sem isso, um campo com "col-3" tentaria ocupar 3 colunas
+       numa grade que agora só tem 1, e quebraria o alinhamento. */
+    .col-2,
+    .col-3,
+    .col-4,
+    .col-6{
+        grid-column: span 1;
+    }
+}
