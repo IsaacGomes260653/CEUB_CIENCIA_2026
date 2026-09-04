@@ -258,6 +258,49 @@
             this.value = valor;
         });
 
+        // ========== SÉRIE: mostra a caixa de observações só no 5º ano ==========
+        // Isso é o que os comentários acima do HTML já descreviam, mas que
+        // não existia de fato: faltava este listener escutar o <select>.
+        const campoSerie = document.getElementById('serie');
+        const caixaQuintoAno = document.getElementById('caixa-quinto-ano');
+        campoSerie.addEventListener('change', function(){
+            // .visivel é a classe que o CSS usa pra trocar display:none por display:block
+            if(this.value === '5ano'){
+                caixaQuintoAno.classList.add('visivel');
+            } else {
+                caixaQuintoAno.classList.remove('visivel');
+            }
+        });
+
+        // ========== IDADE: calculada a partir da Data de Nascimento ==========
+        // O campo idade é "readonly" no HTML, então o único jeito de ele
+        // mudar de valor é por aqui — assim nunca fica errado ou desatualizado.
+        const campoNascimento = document.getElementById('nascimento');
+        const campoIdade = document.getElementById('idade');
+        campoNascimento.addEventListener('change', function(){
+            if(!this.value){
+                campoIdade.value = '';
+                return;
+            }
+
+            // "T00:00:00" evita que o fuso horário jogue a data um dia pra trás
+            const nascimento = new Date(this.value + 'T00:00:00');
+            const hoje = new Date();
+
+            let idade = hoje.getFullYear() - nascimento.getFullYear();
+
+            // Só soma a idade do ano corrente se o aniversário já tiver passado (ou for hoje)
+            const aniversarioJaPassou =
+                hoje.getMonth() > nascimento.getMonth() ||
+                (hoje.getMonth() === nascimento.getMonth() && hoje.getDate() >= nascimento.getDate());
+
+            if(!aniversarioJaPassou){
+                idade--;
+            }
+
+            campoIdade.value = idade + ' anos';
+        });
+
     </script>
 </body>
 </html>
