@@ -132,6 +132,14 @@ form{
     color: #a9b0bb;
 }
 
+/* [readonly] = seletor de atributo, atinge só o input travado (a Idade).
+   Fundo cinza e cursor "proibido" avisam visualmente que não dá pra digitar. */
+.campo input[readonly]{
+    background-color: #eef0f3;
+    color: #666;
+    cursor: not-allowed;
+}
+
 /* :focus = estado do campo quando o usuário clica ou usa Tab */
 .campo input:focus,
 .campo select:focus{
