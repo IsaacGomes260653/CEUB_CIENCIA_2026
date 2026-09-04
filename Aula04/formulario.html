@@ -233,7 +233,46 @@
                 valor = valor.slice(0,5) + '-' + valor.slice(5,8);
             }
             this.value = valor;
+
+            // Só busca quando o CEP estiver completo (8 dígitos, sem o traço)
+            if(valor.replace(/\D/g, '').length === 8){
+                buscarEndereco(valor);
+            }
         });
+
+        // ========== ENDEREÇO: preenchido automaticamente a partir do CEP ==========
+        // ViaCEP é uma API pública e gratuita, não precisa de chave de acesso.
+        // fetch() faz a requisição; o primeiro .then() converte a resposta
+        // pra JSON e o segundo .then() já recebe os dados prontos pra usar.
+        function buscarEndereco(cep){
+            const cepLimpo = cep.replace(/\D/g, '');
+
+            fetch(`https://viacep.com.br/ws/${cepLimpo}/json/`)
+                .then(function(resposta){
+                    return resposta.json();
+                })
+                .then(function(dados){
+                    // A API devolve { erro: true } quando o CEP não existe
+                    if(dados.erro){
+                        alert('CEP não encontrado.');
+                        return;
+                    }
+
+                    document.getElementById('logradouro').value = dados.logradouro;
+                    document.getElementById('bairro').value = dados.bairro;
+                    document.getElementById('cidade').value = dados.localidade;
+                    document.getElementById('estado').value = dados.uf;
+                    document.getElementById('ibge').value = dados.ibge;
+
+                    // Número não vem da API (a rua toda tem o mesmo CEP),
+                    // então o foco vai pro campo que falta o usuário preencher
+                    document.getElementById('numero').focus();
+                })
+                .catch(function(){
+                    // .catch pega falha de rede (sem internet, API fora do ar etc.)
+                    alert('Não foi possível buscar o CEP. Verifique sua conexão.');
+                });
+        }
 
         const campoCpf = document.getElementById('cpf');
         campoCpf.addEventListener('input', function(){
