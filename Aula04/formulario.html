@@ -324,28 +324,40 @@
         // não existia de fato: faltava este listener escutar o <select>.
         const campoSerie = document.getElementById('serie');
         const caixaQuintoAno = document.getElementById('caixa-quinto-ano');
-        campoSerie.addEventListener('change', function(){
+
+        // Nomeada (em vez de function() direto no addEventListener) para
+        // poder chamar ela também fora de um evento, logo abaixo.
+        function atualizarCaixaQuintoAno(){
             // .visivel é a classe que o CSS usa pra trocar display:none por display:block
-            if(this.value === '5ano'){
+            if(campoSerie.value === '5ano'){
                 caixaQuintoAno.classList.add('visivel');
             } else {
                 caixaQuintoAno.classList.remove('visivel');
             }
-        });
+        }
+        campoSerie.addEventListener('change', atualizarCaixaQuintoAno);
+
+        // Roda uma vez já no carregamento: se o navegador restaurar o form
+        // com "5º ano" selecionado (F5 ou voltar pela navegação), o evento
+        // "change" não dispara sozinho e a caixa ficaria escondida errado.
+        atualizarCaixaQuintoAno();
 
         // ========== IDADE: calculada a partir da Data de Nascimento ==========
         // O campo idade é "readonly" no HTML, então o único jeito de ele
         // mudar de valor é por aqui — assim nunca fica errado ou desatualizado.
         const campoNascimento = document.getElementById('nascimento');
         const campoIdade = document.getElementById('idade');
-        campoNascimento.addEventListener('change', function(){
-            if(!this.value){
+
+        // Nomeada pelo mesmo motivo de atualizarCaixaQuintoAno: precisa ser
+        // chamada tanto pelo evento quanto uma vez direto, no load.
+        function atualizarIdade(){
+            if(!campoNascimento.value){
                 campoIdade.value = '';
                 return;
             }
 
             // "T00:00:00" evita que o fuso horário jogue a data um dia pra trás
-            const nascimento = new Date(this.value + 'T00:00:00');
+            const nascimento = new Date(campoNascimento.value + 'T00:00:00');
             const hoje = new Date();
 
             let idade = hoje.getFullYear() - nascimento.getFullYear();
@@ -360,7 +372,13 @@
             }
 
             campoIdade.value = idade + ' anos';
-        });
+        }
+        campoNascimento.addEventListener('change', atualizarIdade);
+
+        // Roda uma vez já no carregamento: se o navegador restaurar a Data
+        // de Nascimento preenchida (F5, voltar na navegação), o "change"
+        // não dispara sozinho e a Idade ficaria vazia em vez de calculada.
+        atualizarIdade();
 
     </script>
 </body>
