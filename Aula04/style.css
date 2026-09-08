@@ -112,6 +112,31 @@ form{
     margin-bottom: 8px;
 }
 
+/*
+    fieldset.campo é usado nos grupos de radio/checkbox (Turno,
+    Atividades Extracurriculares) no lugar de um <label> solto.
+    O navegador aplica border/padding/margin padrão em <fieldset>
+    e min-width:auto (que quebra o encolhimento dentro do grid) —
+    zera tudo aqui pra ele se comportar como o .campo comum.
+*/
+fieldset.campo{
+    border: none;
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+}
+
+/* <legend> é o título do fieldset: mesma aparência do label de .campo */
+.campo legend{
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #111c30;
+    margin-bottom: 8px;
+    padding: 0;
+}
+
 .campo input,
 .campo select{
     border: 1px solid #c7cdd6;
