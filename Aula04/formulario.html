@@ -347,14 +347,17 @@
         // mudar de valor é por aqui — assim nunca fica errado ou desatualizado.
         const campoNascimento = document.getElementById('nascimento');
         const campoIdade = document.getElementById('idade');
-        campoNascimento.addEventListener('change', function(){
-            if(!this.value){
+
+        // Nomeada pelo mesmo motivo de atualizarCaixaQuintoAno: precisa ser
+        // chamada tanto pelo evento quanto uma vez direto, no load.
+        function atualizarIdade(){
+            if(!campoNascimento.value){
                 campoIdade.value = '';
                 return;
             }
 
             // "T00:00:00" evita que o fuso horário jogue a data um dia pra trás
-            const nascimento = new Date(this.value + 'T00:00:00');
+            const nascimento = new Date(campoNascimento.value + 'T00:00:00');
             const hoje = new Date();
 
             let idade = hoje.getFullYear() - nascimento.getFullYear();
@@ -369,7 +372,13 @@
             }
 
             campoIdade.value = idade + ' anos';
-        });
+        }
+        campoNascimento.addEventListener('change', atualizarIdade);
+
+        // Roda uma vez já no carregamento: se o navegador restaurar a Data
+        // de Nascimento preenchida (F5, voltar na navegação), o "change"
+        // não dispara sozinho e a Idade ficaria vazia em vez de calculada.
+        atualizarIdade();
 
     </script>
 </body>
