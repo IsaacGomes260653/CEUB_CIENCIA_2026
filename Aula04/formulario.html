@@ -324,14 +324,23 @@
         // não existia de fato: faltava este listener escutar o <select>.
         const campoSerie = document.getElementById('serie');
         const caixaQuintoAno = document.getElementById('caixa-quinto-ano');
-        campoSerie.addEventListener('change', function(){
+
+        // Nomeada (em vez de function() direto no addEventListener) para
+        // poder chamar ela também fora de um evento, logo abaixo.
+        function atualizarCaixaQuintoAno(){
             // .visivel é a classe que o CSS usa pra trocar display:none por display:block
-            if(this.value === '5ano'){
+            if(campoSerie.value === '5ano'){
                 caixaQuintoAno.classList.add('visivel');
             } else {
                 caixaQuintoAno.classList.remove('visivel');
             }
-        });
+        }
+        campoSerie.addEventListener('change', atualizarCaixaQuintoAno);
+
+        // Roda uma vez já no carregamento: se o navegador restaurar o form
+        // com "5º ano" selecionado (F5 ou voltar pela navegação), o evento
+        // "change" não dispara sozinho e a caixa ficaria escondida errado.
+        atualizarCaixaQuintoAno();
 
         // ========== IDADE: calculada a partir da Data de Nascimento ==========
         // O campo idade é "readonly" no HTML, então o único jeito de ele
