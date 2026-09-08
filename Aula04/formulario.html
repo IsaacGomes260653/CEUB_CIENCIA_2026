@@ -199,12 +199,15 @@
                     </div>
                 </div>
 
-                <div class="campo">
+                <fieldset class="campo">
                     <!--
-                        Sem "for" porque este label descreve o GRUPO inteiro,
-                        não um campo específico.
+                        <legend> é o título do grupo inteiro (substitui o
+                        <label> solto sem "for" que era usado antes).
+                        Leitores de tela anunciam o legend ao entrar no
+                        fieldset, então cada radio some só como "Manhã"/
+                        "Tarde", não "Turno: Manhã".
                     -->
-                    <label>Turno</label>
+                    <legend>Turno</legend>
                     <div class="opcoes">
                         <!--
                             RADIO: mesmo "name" = mesmo grupo.
@@ -213,7 +216,7 @@
                         <label><input type="radio" name="turno" value="manha" required> Manhã</label>
                         <label><input type="radio" name="turno" value="tarde" required> Tarde</label>
                     </div>
-                </div>
+                </fieldset>
 
                 <div class="campo">
                     <label>Atividades Extracurriculares</label>
