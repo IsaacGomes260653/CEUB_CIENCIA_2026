@@ -61,6 +61,16 @@ Depois acesse `http://localhost:8080`.
 - PWA (manifest + service worker) para instalação e uso offline
 - Alternância de tema visual (Retro/Neon) via `assets/theme.js`
 
+## Aulas (Desenvolvimento Web — UniCEUB)
+
+Além do PlayHub, o repositório guarda os exercícios da disciplina de Desenvolvimento Web:
+
+| Pasta | Conteúdo |
+|---|---|
+| `Aula02/` | Formulário, lista e tabela em HTML puro (tags básicas, sem CSS) |
+| `Aula03/` | Formulário "Escola Virtual" com CSS embutido no `<head>` |
+| `Aula04/` | Formulário "Escola Virtual" evoluído: CSS em arquivo separado, máscaras de CPF/telefone/CEP, preenchimento automático de endereço via API ViaCEP, cálculo de idade e campos condicionais por série |
+
 ## Licença
 
 Uso pessoal / educacional.
@@ -102,6 +112,16 @@ Then open `http://localhost:8080`.
 - HTML5, CSS3, JavaScript (vanilla, no external dependencies)
 - PWA (manifest + service worker) for install and offline use
 - Visual theme switcher (Retro/Neon) via `assets/theme.js`
+
+## Classes (Web Development — UniCEUB)
+
+Besides PlayHub, the repository also holds the exercises from the Web Development course:
+
+| Folder | Content |
+|---|---|
+| `Aula02/` | Form, list, and table in plain HTML (basic tags, no CSS) |
+| `Aula03/` | "Virtual School" form with CSS embedded in the `<head>` |
+| `Aula04/` | "Virtual School" form, evolved: CSS in its own file, CPF/phone/ZIP masks, automatic address lookup via the ViaCEP API, age calculation, and grade-conditional fields |
 
 ## License
 
