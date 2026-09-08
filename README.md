@@ -113,6 +113,16 @@ Then open `http://localhost:8080`.
 - PWA (manifest + service worker) for install and offline use
 - Visual theme switcher (Retro/Neon) via `assets/theme.js`
 
+## Classes (Web Development — UniCEUB)
+
+Besides PlayHub, the repository also holds the exercises from the Web Development course:
+
+| Folder | Content |
+|---|---|
+| `Aula02/` | Form, list, and table in plain HTML (basic tags, no CSS) |
+| `Aula03/` | "Virtual School" form with CSS embedded in the `<head>` |
+| `Aula04/` | "Virtual School" form, evolved: CSS in its own file, CPF/phone/ZIP masks, automatic address lookup via the ViaCEP API, age calculation, and grade-conditional fields |
+
 ## License
 
 Personal / educational use.
