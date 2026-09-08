@@ -61,6 +61,16 @@ Depois acesse `http://localhost:8080`.
 - PWA (manifest + service worker) para instalação e uso offline
 - Alternância de tema visual (Retro/Neon) via `assets/theme.js`
 
+## Aulas (Desenvolvimento Web — UniCEUB)
+
+Além do PlayHub, o repositório guarda os exercícios da disciplina de Desenvolvimento Web:
+
+| Pasta | Conteúdo |
+|---|---|
+| `Aula02/` | Formulário, lista e tabela em HTML puro (tags básicas, sem CSS) |
+| `Aula03/` | Formulário "Escola Virtual" com CSS embutido no `<head>` |
+| `Aula04/` | Formulário "Escola Virtual" evoluído: CSS em arquivo separado, máscaras de CPF/telefone/CEP, preenchimento automático de endereço via API ViaCEP, cálculo de idade e campos condicionais por série |
+
 ## Licença
 
 Uso pessoal / educacional.
