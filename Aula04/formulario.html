@@ -35,8 +35,13 @@
                 -->
                 <div class="campo">
                     <label for="nome">Nome do Aluno</label>
-                    <!-- required = o navegador bloqueia o envio se estiver vazio -->
-                    <input type="text" id="nome" name="nome" required>
+                    <!--
+                        required = o navegador bloqueia o envio se estiver vazio.
+                        autocomplete="name" completa o padrão já usado nos
+                        outros campos (e-mail, telefone, endereço...): informa
+                        ao navegador que tipo de dado sugerir no autopreenchimento.
+                    -->
+                    <input type="text" id="nome" name="nome" autocomplete="name" required>
                 </div>
                 <div class="campo">
                     <label for="email">E-Mail</label>
