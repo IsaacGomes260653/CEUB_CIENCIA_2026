@@ -2,6 +2,10 @@
 
 Portal de mini-jogos gratuitos, direto no navegador. HTML, CSS e JavaScript puros — sem frameworks, sem build, sem instalação. Também funciona como PWA (instalável e com suporte offline via Service Worker).
 
+**[Jogar agora](https://isaacgomes260653.github.io/CEUB_CIENCIA_2026/)**
+
+![Página inicial do PlayHub: título "Jogue de graça, direto no navegador" e a grade com os cards dos sete jogos](.github/screenshot.png)
+
 ## Jogos
 
 | Jogo | Descrição |
