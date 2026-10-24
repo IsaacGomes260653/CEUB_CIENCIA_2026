@@ -77,7 +77,7 @@ Além do PlayHub, o repositório guarda os exercícios da disciplina de Desenvol
 
 ## Licença
 
-Uso pessoal / educacional.
+O código está sob a licença [MIT](LICENSE), exceto o `joaobonzinho.html`, escrito por João Pedro de Barros Marques, que continua sendo dele.
 
 ---
 
@@ -129,4 +129,4 @@ Besides PlayHub, the repository also holds the exercises from the Web Developmen
 
 ## License
 
-Personal / educational use.
+The code is under the [MIT](LICENSE) license, except `joaobonzinho.html`, written by João Pedro de Barros Marques, which remains his.
