@@ -15,8 +15,8 @@
   <img alt="CSS" src="https://img.shields.io/badge/CSS-122039?style=flat-square&logo=css&logoColor=white">
   <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-122039?style=flat-square&logo=javascript&logoColor=white">
   <img alt="PWA" src="https://img.shields.io/badge/PWA-122039?style=flat-square&logo=pwa&logoColor=white">
-  <a href="LICENSE"><img alt="Licença MIT" src="https://img.shields.io/badge/licen%C3%A7a-MIT-122039?style=flat-square"></a>
-  <img alt="Status: entregue" src="https://img.shields.io/badge/status-entregue-122039?style=flat-square">
+  <a href="LICENSE"><img alt="Licença MIT" src="https://img.shields.io/badge/licen%C3%A7a-MIT-122039?style=flat-square&labelColor=0b1324"></a>
+  <img alt="Status: entregue" src="https://img.shields.io/badge/status-entregue-122039?style=flat-square&labelColor=0b1324">
 </p>
 
 ## Capturas
