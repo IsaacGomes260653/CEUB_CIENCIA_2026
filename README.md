@@ -168,3 +168,17 @@ O código está sob a licença [MIT](LICENSE), exceto o `joaobonzinho.html`, que
 ## Contato
 
 Isaac Gomes de Moraes · [LinkedIn](https://www.linkedin.com/in/isaacgomesmoraes/) · [e-mail](mailto:isaacgm260653@gmail.com) · [GitHub](https://github.com/IsaacGomes260653)
+
+---
+
+## English summary
+
+**PlayHub** is a portal of seven mini-games that run straight in the browser, built for the CEUB 2026 Science Fair: Tic-Tac-Toe, Snake, 2048, Memory (with real photos from public APIs), the 15 Puzzle, Minesweeper and Fantasy World Cup, where you draft players from 22 historic World Cup squads and play a simulated tournament.
+
+- Plain HTML, CSS and JavaScript, with no build step and no dependencies.
+- Installable PWA that works offline, thanks to a Service Worker cache.
+- Best scores, theme (Retro or Neon) and sound settings are saved in `localStorage`.
+
+**Run it:** `git clone https://github.com/IsaacGomes260653/CEUB_CIENCIA_2026.git`, then `python -m http.server 8080` inside the folder and open <http://localhost:8080>. **Play online:** <https://isaacgomes260653.github.io/CEUB_CIENCIA_2026/>.
+
+The `Aula02/` to `Aula04/` folders hold exercises from a Web Development course at UniCEUB and are not part of PlayHub. Code under the [MIT](LICENSE) license, except `joaobonzinho.html`, which belongs to João Pedro de Barros Marques.
