@@ -147,3 +147,9 @@ As pastas `Aula02/` a `Aula04/` não fazem parte do PlayHub. São os exercícios
 - API externa é bônus, não dependência: com limite de tempo e um plano B, o jogo continua quando a API cai.
 - Dá para organizar um site com vários jogos sem framework, separando o que é comum a todos do que é de cada um.
 - Regras de futebol ficam mais fáceis de manter como dados (formações, vagas e posições aceitas) do que espalhadas em `if`.
+
+## Próximos passos
+
+- [ ] Em telas de 390 px, o cabeçalho corta o botão de som.
+- [ ] No Jogo da Memória, trocar de nível antes de as fotos do nível anterior chegarem desenha o baralho errado.
+- [ ] A página Sobre ainda não explica o Fantasy World Cup.
