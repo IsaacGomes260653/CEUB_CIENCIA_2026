@@ -23,10 +23,14 @@
 
 ![Página inicial do PlayHub no tema Retro: título "Jogue de graça, direto no navegador" e a grade com os sete jogos](.github/capturas/inicio.png)
 
-| | |
-|---|---|
-| ![Partida de 2048 em andamento, com 332 pontos, uma peça de 64 e os botões de direção](.github/capturas/2048.png) | ![Campo Minado no nível fácil, com parte do tabuleiro revelada e uma bandeira](.github/capturas/campo-minado.png) |
-| ![Jogo da Memória no nível fácil, com duas cartas viradas mostrando fotos de cachorros](.github/capturas/memoria.png) | ![Fantasy World Cup na formação 4-3-3, com sete jogadores escalados no campo e a roleta na Espanha de 2010](.github/capturas/copa.png) |
+<table>
+  <tr>
+    <td width="50%" valign="top"><img src=".github/capturas/2048.png" alt="Partida de 2048 em andamento, com 332 pontos, uma peça de 64 e os botões de direção"></td>
+    <td width="50%" valign="top"><img src=".github/capturas/campo-minado.png" alt="Campo Minado no nível fácil, com parte do tabuleiro revelada e uma bandeira"><br><br><img src=".github/capturas/memoria.png" alt="Jogo da Memória no nível fácil, com duas cartas viradas mostrando fotos de cachorros"></td>
+  </tr>
+</table>
+
+![Fantasy World Cup na formação 4-3-3, com sete jogadores escalados no campo e a roleta na Espanha de 2010](.github/capturas/copa.png)
 
 <details>
 <summary>Tema Neon</summary>
