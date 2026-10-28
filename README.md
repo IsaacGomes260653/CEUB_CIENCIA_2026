@@ -102,3 +102,41 @@ Abra <http://localhost:8080>. Não há nada para instalar nem compilar.
 Para só jogar, também dá para abrir o `index.html` direto no navegador, mas aí o Service Worker não roda e o site não fica offline.
 
 A versão publicada está em <https://isaacgomes260653.github.io/CEUB_CIENCIA_2026/>.
+
+## Estrutura de pastas
+
+```
+.
+├── index.html          # página inicial com a grade dos jogos
+├── about.html          # recursos do site e como jogar
+├── manifest.json       # manifest do PWA
+├── sw.js               # Service Worker (cache offline)
+├── assets/
+│   ├── style.css       # estilo global, temas Retro e Neon
+│   ├── theme.js        # troca e guarda o tema
+│   ├── sfx.js          # efeitos sonoros com a Web Audio API
+│   ├── share.js        # compartilhar o resultado
+│   ├── pwa.js          # registra o Service Worker
+│   ├── icons.js        # ícones SVG usados pelos jogos
+│   ├── photos.js       # fotos das APIs públicas, com limite de tempo
+│   └── icon.svg        # ícone do app
+├── games/              # um arquivo por jogo
+│   ├── tictactoe.html
+│   ├── snake.html
+│   ├── 2048.html
+│   ├── memory.html
+│   ├── puzzle.html
+│   ├── minesweeper.html
+│   └── worldcup.html
+├── Aula02/ … Aula04/   # exercícios da disciplina de Desenvolvimento Web
+├── joaobonzinho.html   # arquivo do João Pedro (ver Créditos)
+└── .github/            # banner, capturas e imagem de compartilhamento
+```
+
+As pastas `Aula02/` a `Aula04/` não fazem parte do PlayHub. São os exercícios da disciplina de Desenvolvimento Web do UniCEUB:
+
+| Pasta | Conteúdo |
+|---|---|
+| `Aula02/` | Formulário, lista e tabela em HTML puro |
+| `Aula03/` | Formulário "Escola Virtual" com CSS no `<head>` |
+| `Aula04/` | O mesmo formulário com CSS separado, máscaras de CPF, telefone e CEP, endereço preenchido pela API ViaCEP, cálculo da idade e campos que mudam conforme a série |
