@@ -160,3 +160,7 @@ As pastas `Aula02/` a `Aula04/` não fazem parte do PlayHub. São os exercícios
 - `joaobonzinho.html`: escrito por João Pedro de Barros Marques.
 - Fotos: [Dog CEO](https://dog.ceo/dog-api/), [The Cat API](https://thecatapi.com/), [RandomFox](https://randomfox.ca/), [shibe.online](https://shibe.online/) e os sprites da [PokeAPI](https://github.com/PokeAPI/sprites).
 - Fontes: [Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P) e [VT323](https://fonts.google.com/specimen/VT323), pelo Google Fonts.
+
+## Licença
+
+O código está sob a licença [MIT](LICENSE), exceto o `joaobonzinho.html`, que continua sendo do João Pedro de Barros Marques.
