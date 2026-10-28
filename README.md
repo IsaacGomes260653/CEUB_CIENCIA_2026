@@ -164,3 +164,7 @@ As pastas `Aula02/` a `Aula04/` não fazem parte do PlayHub. São os exercícios
 ## Licença
 
 O código está sob a licença [MIT](LICENSE), exceto o `joaobonzinho.html`, que continua sendo do João Pedro de Barros Marques.
+
+## Contato
+
+Isaac Gomes de Moraes · [LinkedIn](https://www.linkedin.com/in/isaacgomesmoraes/) · [e-mail](mailto:isaacgm260653@gmail.com) · [GitHub](https://github.com/IsaacGomes260653)
