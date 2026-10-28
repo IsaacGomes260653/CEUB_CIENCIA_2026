@@ -1,4 +1,4 @@
-const CACHE_NAME = 'playhub-v7';
+const CACHE_NAME = 'playhub-v8';
 const PRECACHE_URLS = [
   './',
   './index.html',
@@ -9,6 +9,8 @@ const PRECACHE_URLS = [
   './assets/pwa.js',
   './assets/theme.js',
   './assets/share.js',
+  './assets/icons.js',
+  './assets/photos.js',
   './assets/icon.svg',
   './games/tictactoe.html',
   './games/snake.html',
