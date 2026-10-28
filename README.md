@@ -55,3 +55,17 @@ Em todo o site:
 - **Recordes salvos no aparelho**: cada jogo guarda o seu melhor resultado no navegador, sem conta e sem servidor.
 - **Dois temas**, Retro e Neon, e efeitos sonoros que podem ser desligados. As duas escolhas ficam salvas.
 - **Compartilhar o resultado** pelo menu do celular ou, no computador, copiando o texto.
+
+## Tecnologias
+
+| Tecnologia | Por quê |
+|---|---|
+| HTML, CSS e JavaScript puros | Sem build e sem dependências: cada jogo é uma página que abre sozinha, e o GitHub Pages publica direto da branch. |
+| Canvas | O Snake redesenha o tabuleiro a cada passo, o que fica mais simples e leve num canvas do que em elementos HTML. |
+| Variáveis CSS | Os temas Retro e Neon trocam só as variáveis de cor, sem duplicar o estilo. |
+| Service Worker e Web App Manifest | Deixam o site instalável e jogável sem internet. O cache responde na hora e se atualiza em segundo plano. |
+| Web Audio API | Os efeitos sonoros são gerados por osciladores, então o site não carrega nenhum arquivo de áudio. |
+| localStorage | Guarda recordes, placar, tema e som no próprio navegador. |
+| Web Share API | Abre o menu de compartilhar do celular. No computador, cai para a área de transferência. |
+| APIs públicas de imagens | Dog CEO, The Cat API, RandomFox, shibe.online e os sprites da PokeAPI dão as fotos da Memória e do Quebra-Cabeça, sem chave de acesso. Cada pedido tem limite de 5 segundos e, se falhar, o jogo usa ícones ou números. |
+| Press Start 2P e VT323 | Fontes do Google Fonts que dão o visual de fliperama. |
