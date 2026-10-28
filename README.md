@@ -86,3 +86,19 @@ flowchart LR
 - Cada jogo é um arquivo HTML com o próprio script. O que é comum a todos (tema, som, ícones, fotos e compartilhar) fica em `assets/` e é carregado por cada página.
 - Na primeira visita, o `sw.js` guarda no cache todas as páginas e os arquivos de `assets/`. Depois disso, o site abre do cache, mesmo sem internet, e busca as versões novas em segundo plano. Pedidos para outros sites, como as APIs de imagens e as fontes, passam direto.
 - O Fantasy World Cup descreve elencos, formações e posições como dados (listas de jogadores e de vagas no campo), e cada partida é simulada minuto a minuto, com a chance de gol de cada lado calculada pela média das notas dos titulares e pelo estilo de jogo.
+
+## Como rodar
+
+**Pré-requisitos:** um navegador atual e, para o modo offline e a instalação, o Python 3 (ou qualquer servidor de arquivos estáticos).
+
+```bash
+git clone https://github.com/IsaacGomes260653/CEUB_CIENCIA_2026.git
+cd CEUB_CIENCIA_2026
+python -m http.server 8080
+```
+
+Abra <http://localhost:8080>. Não há nada para instalar nem compilar.
+
+Para só jogar, também dá para abrir o `index.html` direto no navegador, mas aí o Service Worker não roda e o site não fica offline.
+
+A versão publicada está em <https://isaacgomes260653.github.io/CEUB_CIENCIA_2026/>.
