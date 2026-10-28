@@ -69,3 +69,20 @@ Em todo o site:
 | Web Share API | Abre o menu de compartilhar do celular. No computador, cai para a área de transferência. |
 | APIs públicas de imagens | Dog CEO, The Cat API, RandomFox, shibe.online e os sprites da PokeAPI dão as fotos da Memória e do Quebra-Cabeça, sem chave de acesso. Cada pedido tem limite de 5 segundos e, se falhar, o jogo usa ícones ou números. |
 | Press Start 2P e VT323 | Fontes do Google Fonts que dão o visual de fliperama. |
+
+## Como funciona
+
+```mermaid
+flowchart LR
+    I["index.html<br/>grade dos jogos"] --> G["games/*.html<br/>um jogo por página"]
+    G --> A["assets/<br/>tema, som, ícones,<br/>fotos e compartilhar"]
+    G --> L[("localStorage<br/>recordes e preferências")]
+    A -. fotos .-> API["APIs públicas<br/>de imagens"]
+    SW["sw.js<br/>Service Worker"] -. cache .- I
+    SW -. cache .- G
+    SW -. cache .- A
+```
+
+- Cada jogo é um arquivo HTML com o próprio script. O que é comum a todos (tema, som, ícones, fotos e compartilhar) fica em `assets/` e é carregado por cada página.
+- Na primeira visita, o `sw.js` guarda no cache todas as páginas e os arquivos de `assets/`. Depois disso, o site abre do cache, mesmo sem internet, e busca as versões novas em segundo plano. Pedidos para outros sites, como as APIs de imagens e as fontes, passam direto.
+- O Fantasy World Cup descreve elencos, formações e posições como dados (listas de jogadores e de vagas no campo), e cada partida é simulada minuto a minuto, com a chance de gol de cada lado calculada pela média das notas dos titulares e pelo estilo de jogo.
