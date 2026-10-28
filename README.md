@@ -30,7 +30,7 @@
   </tr>
 </table>
 
-![Fantasy World Cup na formação 4-3-3, com sete jogadores escalados no campo e a roleta na Espanha de 2010](.github/capturas/copa.png)
+<p align="center"><img src=".github/capturas/copa.png" width="480" alt="Fantasy World Cup na formação 4-3-3, com sete jogadores escalados no campo e a roleta na Espanha de 2010"></p>
 
 <details>
 <summary>Tema Neon</summary>
