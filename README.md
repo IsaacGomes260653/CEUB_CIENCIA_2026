@@ -36,3 +36,22 @@
 </details>
 
 As capturas foram feitas com o Playwright, com o projeto rodando localmente.
+
+## Funcionalidades
+
+| Jogo | Como funciona |
+|---|---|
+| Jogo da Velha | Dois jogadores no mesmo aparelho, com o placar de vitórias e empates guardado. |
+| Snake | Setas, WASD ou botões na tela. Coma as maçãs, cresça e não bata na parede nem em você mesmo. |
+| 2048 | Setas, botões ou arrastar no celular. Combine as peças até chegar ao 2048. |
+| Jogo da Memória | Três níveis (6, 8 ou 12 pares) e cartas com fotos reais de cachorros, gatos, raposas, pássaros, shibas ou Pokémon. Sem internet, usa ícones. |
+| Quebra-Cabeça 15 | Ordene as peças de 1 a 15 ou monte uma foto. |
+| Campo Minado | Três níveis. Clique direito ou toque longo marca a bandeira. |
+| Fantasy World Cup | Escolha formação (4-4-2, 4-3-3, 3-5-2, 5-3-2 ou 4-2-3-1) e estilo, escale jogadores de 22 elencos históricos de Copas sorteados numa roleta e dispute fase de grupos, semifinal e final, com pênaltis no empate. |
+
+Em todo o site:
+
+- **Funciona offline e pode ser instalado** como app (PWA).
+- **Recordes salvos no aparelho**: cada jogo guarda o seu melhor resultado no navegador, sem conta e sem servidor.
+- **Dois temas**, Retro e Neon, e efeitos sonoros que podem ser desligados. As duas escolhas ficam salvas.
+- **Compartilhar o resultado** pelo menu do celular ou, no computador, copiando o texto.
