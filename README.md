@@ -140,3 +140,10 @@ As pastas `Aula02/` a `Aula04/` não fazem parte do PlayHub. São os exercícios
 | `Aula02/` | Formulário, lista e tabela em HTML puro |
 | `Aula03/` | Formulário "Escola Virtual" com CSS no `<head>` |
 | `Aula04/` | O mesmo formulário com CSS separado, máscaras de CPF, telefone e CEP, endereço preenchido pela API ViaCEP, cálculo da idade e campos que mudam conforme a série |
+
+## O que eu aprendi
+
+- Um Service Worker só funciona offline com o que está na lista dele. Ao revisar este README, descobri que o `icons.js` e o `photos.js` tinham ficado de fora, e o Jogo da Memória abria vazio sem internet.
+- API externa é bônus, não dependência: com limite de tempo e um plano B, o jogo continua quando a API cai.
+- Dá para organizar um site com vários jogos sem framework, separando o que é comum a todos do que é de cada um.
+- Regras de futebol ficam mais fáceis de manter como dados (formações, vagas e posições aceitas) do que espalhadas em `if`.
